@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="User" asp-action="ImportUsers" method="post" enctype="multipart/form-data">
+
+    <div class="form-group w-25">
+        <input type="file" name="file" class="form-control" />
+    </div>
+
+
+    <hr/>
+
+    <button type="submit" class="btn btn-outline-success">Import Excel</button>
+
+</form>

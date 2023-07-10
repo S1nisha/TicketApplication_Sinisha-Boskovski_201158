@@ -1,0 +1,30 @@
+﻿@using TicketShop.Domain.Identity
+@model List<TicketShop.Domain.Identity.UserRolesViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>User Managment</h1>
+<a asp-controller="RoleManager" asp-action="Index" class="btn btn-info mb-2 mr-3">View All Roles</a>
+<a asp-controller="User" asp-action="Index" class="btn btn-info mb-2">Import Users</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@string.Join(" , ", user.Roles.ToList())</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Manage Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

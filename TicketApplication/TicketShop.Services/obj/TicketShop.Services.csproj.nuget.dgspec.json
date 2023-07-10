@@ -1,0 +1,238 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Services\\TicketShop.Services.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Domain\\TicketShop.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Domain\\TicketShop.Domain.csproj",
+        "projectName": "TicketShop.Domain",
+        "projectPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Domain\\TicketShop.Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Repository\\TicketShop.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Repository\\TicketShop.Repository.csproj",
+        "projectName": "TicketShop.Repository",
+        "projectPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Repository\\TicketShop.Repository.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Domain\\TicketShop.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Domain\\TicketShop.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Services\\TicketShop.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Services\\TicketShop.Services.csproj",
+        "projectName": "TicketShop.Services",
+        "projectPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Services\\TicketShop.Services.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Domain\\TicketShop.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Domain\\TicketShop.Domain.csproj"
+              },
+              "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Repository\\TicketShop.Repository.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\TicketApplication\\TicketShop.Repository\\TicketShop.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

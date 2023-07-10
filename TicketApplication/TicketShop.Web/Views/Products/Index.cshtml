@@ -1,0 +1,96 @@
+﻿@model IEnumerable<TicketShop.Domain.DomainModels.Product>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<TicketShop.Domain.Identity.TicketApplicationUser> SignInManager
+@inject UserManager<TicketShop.Domain.Identity.TicketApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p style="font-size:50px;">All Movies</p>
+
+<div class="row mb-3">
+    <div>
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-action="Create" class="btn btn-success mr-3 ml-3">Create New</a>
+        }
+    </div>
+    <div>
+        <a asp-action="GetValidProducts" class="btn btn-info">Show valid tickets only</a>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th></th>
+            <th>
+                <div class="form-group">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @:
+                        <form asp-action="ExportTickets" class="form-inline">
+                            <select class="form-control" name="genre">
+                                <option value="All">All</option>
+                                <option value="Action">Action</option>
+                                <option value="Comedy">Comedy</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Horror">Horror</option>
+                            </select>
+                            <input type="submit" class="btn btn-outline-warning ml-1" value="Export" />
+                        </form>
+                    }
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValidTime)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    <a asp-action="AddTicketToCart" asp-route-id="@item.Id" class="btn btn-primary">Add to Cart</a>
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> @:|
+                    }
+
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @:|
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+﻿@model TicketShop.Domain.DomainModels.Order
+
+@{
+    ViewData["Title"] = "Order Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>
+    Order Details for:
+</h1>
+<h1>@Model.Id</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var totalPrice = 0.0;
+        }
+        @foreach (var item in Model.ProductInOrders)
+        {
+            totalPrice += item.OrderedProduct.Price * item.Quantity;
+            <tr>
+                <td>
+                    @item.OrderedProduct.Movie
+                </td>
+                <td>
+                    @item.OrderedProduct.Genre
+                </td>
+                <td>
+                    @item.OrderedProduct.ValidTime
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+                <td>
+                    $@item.OrderedProduct.Price
+                </td>
+            </tr>
+        }
+        <tr>
+            <td class="h3">Total Price Paid:</td>
+            <td> </td>
+            <td></td>
+            <td></td>
+            <td class="h3">$@totalPrice</td>
+        </tr>
+    </tbody>
+</table>

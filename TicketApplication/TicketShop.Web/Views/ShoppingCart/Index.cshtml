@@ -1,0 +1,85 @@
+﻿@model TicketShop.Domain.DTO.ShoppingCartDto
+@inject IOptions<TicketShop.Domain.StripeSettings> Stripe
+@using Microsoft.Extensions.Options
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row m-4">
+        <div class="col-lg-8">
+            <table class="table">
+                <thead style="background-color:#576574;">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Movie</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.ProductsInShoppingCart.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="5">No Tickets</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @for (int i = 0; i < Model.ProductsInShoppingCart.Count; i++)
+                        {
+                            var item = Model.ProductsInShoppingCart[i];
+
+                            <tr>
+                                <th scope="row">@(i + 1)</th>
+                                <td><a asp-controller="Tickets" asp-action="Details" asp-route-id="@item.Product.Id">@item.Product.Movie</a></td>
+                                <td>@item.Quantity</td>
+                                <td>$@item.Product.Price</td>
+                                <td><a asp-action="DeleteFromShoppingCart" asp-route-ticketId="@item.ProductId" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+                            </tr>
+                        }}
+                </tbody>
+                <tfoot class="">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="col-lg-4" style="margin-top:370px;">
+
+            <div class="card p-3">
+                <h4 class="mb-4">Order Summary</h4>
+
+                <b>Total:</b>
+                <p class="h3">@Model.TotalPrice </p>
+
+                @if (Model.TotalPrice != 0)
+                {
+                    <form asp-controller="ShoppingCart" asp-action="PayOrder" method="POST">
+                        <article>
+                            <script src="https://checkout.stripe.com/checkout.js"
+                                    class="stripe-button"
+                                    data-key="@Stripe.Value.PublishableKey"
+                                    data-locale="auto"
+                                    data-description="Ticket Payment"
+                                    data-amount="@(Model.TotalPrice * 100)"
+                                    data-label="Pay $@Model.TotalPrice"></script>
+                        </article>
+                    </form>
+                }
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
